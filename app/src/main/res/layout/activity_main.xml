@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:layout_constraintDimensionRatio="3:4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:scaleType="fitCenter"/>
+
+    <ImageView
+        android:id="@+id/imageOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/predict"
+        android:layout_width="116dp"
+        android:layout_height="67dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/primary"
+        android:textColor="@color/tertiary"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:onClick="btnPredict"
+        android:text="Predict" />
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="27dp"
+        android:backgroundTint="@color/tertiary"
+        android:textColor="@color/primary"
+        android:layout_toEndOf="@+id/predict"
+        android:onClick="selectImage"
+        android:text="Upload" />
+
+</RelativeLayout>
